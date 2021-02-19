@@ -23,5 +23,5 @@ class TimeStamp(Base):
 
 
 if __name__ == "__main__":
-    print("run models.py")
+    print("SQlite table create")
     Base.metadata.create_all(bind=engine)
