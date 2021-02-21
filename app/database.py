@@ -12,7 +12,7 @@ SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://%s:%s@/%s?%s' % (
     # "tori-304112:asia-northeast1:tori-db"
     # "172.18.0.3:3306",
     "test_database",
-    "unix_socket=/cloudsql/tori-db"
+    "unix_socket=/cloudsql/tori-304112:asia-northeast1:tori-db"
 )
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 

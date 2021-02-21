@@ -10,6 +10,7 @@ WORKDIR /app/
 RUN poetry install --no-root
 
 EXPOSE 8080
+EXPOSE 3306
 
 COPY ./app /app
 # RUN python models.py
