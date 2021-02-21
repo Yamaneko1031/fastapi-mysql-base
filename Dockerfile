@@ -10,8 +10,8 @@ WORKDIR /app/
 RUN poetry install --no-root
 
 EXPOSE 8080
-EXPOSE 3306
+# EXPOSE 3306
 
 COPY ./app /app
-# RUN python models.py
-# CMD sh -c "uvicorn main:app --host 0.0.0.0 --port 8080"
+RUN python models.py
+CMD sh -c "uvicorn main:app --host 0.0.0.0 --port 8080"
