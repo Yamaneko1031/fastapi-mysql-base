@@ -5,13 +5,14 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///test.db"
-SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://%s:%s@%s/%s?charset=utf8' % (
+SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://%s:%s@/%s?%s' % (
     "tori",
     "Yamanekoubou1031",
-    "172.24.48.3:3306"
+    # "172.24.48.3:3306"
     # "tori-304112:asia-northeast1:tori-db"
     # "172.18.0.3:3306",
     "test_database",
+    "unix_socket=/cloudsql/tori-304112:asia-northeast1:tori-db"
 )
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
