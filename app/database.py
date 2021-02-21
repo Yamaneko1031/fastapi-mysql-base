@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://%s:%s@%s/%s?charset=utf8' % (
     "tori",
     "Yamanekoubou1031",
-    "127.0.0.1:3306"
+    "172.24.48.3:3306"
     # "tori-304112:asia-northeast1:tori-db"
     # "172.18.0.3:3306",
     "test_database",
