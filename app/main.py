@@ -33,8 +33,10 @@ app.add_middleware(
 def get_db():
     db = SessionLocal()
     try:
+        crud.create_time(db, "open")
         yield db
     finally:
+        crud.create_time(db, "close")
         db.close()
 
 

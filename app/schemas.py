@@ -1,4 +1,5 @@
 # schemas.py
+from datetime import date, datetime, time, timedelta
 from pydantic import BaseModel
 from sqlalchemy.sql.sqltypes import Boolean
 
@@ -26,7 +27,7 @@ class User(UserBase):
 class TimeTest(BaseModel):
     id: int
     kind: str
-    created_at: str
+    created_at: datetime
 
     # ORMモードの使用を許可する
     class Config:
