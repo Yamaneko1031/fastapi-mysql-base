@@ -23,7 +23,7 @@ SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://%s:%s@%s/%s?charset=utf8' % (
     # "172.24.48.3:3306"
     # "tori-304112:asia-northeast1:tori-db"
     # "172.24.48.3:3306",
-    "127.0.0.1:3306",
+    "127.0.0.1:3306"
     "test_database",
     # "unix_socket=/cloudsql/tori-304112:asia-northeast1:tori-db"
 )
