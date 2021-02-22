@@ -26,3 +26,8 @@ class TimeStamp(Base):
 if __name__ == "__main__":
     print("SQlite table create")
     Base.metadata.create_all(bind=engine)
+
+
+def create_table():
+    print("SQlite table create")
+    Base.metadata.create_all(bind=engine)

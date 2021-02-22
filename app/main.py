@@ -12,6 +12,7 @@ from starlette.middleware.cors import CORSMiddleware
 from database import SessionLocal
 import crud
 import schemas
+import models
 
 app = FastAPI()
 
@@ -75,3 +76,10 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
 def read_times(db: Session = Depends(get_db2)):
     times = crud.get_times(db)
     return times
+
+
+@app.post("/test/")
+def create_user():
+    models.create_table()
+    return {"result":"success"}
+    
