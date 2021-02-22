@@ -29,16 +29,26 @@ from sqlalchemy.orm import sessionmaker
 #     # "unix_socket=/cloudsql/tori-304112:asia-northeast1:tori-db"
 # )
 
-SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://{0}:{1}@{2}/{3}?charset=utf8'.format(
-    "tori",
-    "Yamanekoubou1031",
-    # "172.24.48.3:3306"
-    # "tori-304112:asia-northeast1:tori-db"
-    "172.24.48.3:1433",
-    # "127.0.0.1:3306"
-    "test_database",
-    # "unix_socket=/cloudsql/tori-304112:asia-northeast1:tori-db"
-)
+# SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://{0}:{1}@{2}/{3}?charset=utf8'.format(
+#     "tori",
+#     "Yamanekoubou1031",
+#     # "172.24.48.3:3306"
+#     # "tori-304112:asia-northeast1:tori-db"
+#     "172.24.48.3:1433",
+#     # "127.0.0.1:3306"
+#     "test_database",
+#     # "unix_socket=/cloudsql/tori-304112:asia-northeast1:tori-db"
+# )
+
+SQLALCHEMY_DATABASE_URL = sqlalchemy.engine.url.URL(
+        drivername="mysql+pymysql",
+        username="tori",  # e.g. "my-database-user"
+        password="Yamanekoubou1031",  # e.g. "my-database-password"
+        host="172.24.48.3",  # e.g. "127.0.0.1"
+        port="1433",  # e.g. 3306
+        database="test_database",  # e.g. "my-database-name"
+    )
+
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
 # サポートしているDBと対話するためのエンジン
