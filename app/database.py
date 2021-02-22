@@ -6,6 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///test.db"
+
 # SQLALCHEMY_DATABASE_URL = sqlalchemy.engine.url.URL(
 #             drivername="mysql+pymysql",
 #             username="tori",
@@ -45,7 +46,7 @@ SQLALCHEMY_DATABASE_URL = sqlalchemy.engine.url.URL(
         username="tori",  # e.g. "my-database-user"
         password="Yamanekoubou1031",  # e.g. "my-database-password"
         host="172.24.48.3",  # e.g. "127.0.0.1"
-        port="1433",  # e.g. 3306
+        port="3306",  # e.g. 3306
         database="test_database",  # e.g. "my-database-name"
     )
 
