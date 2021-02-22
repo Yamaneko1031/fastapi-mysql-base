@@ -34,7 +34,7 @@ SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://{0}:{1}@{2}/{3}?charset=utf8'.format(
     "Yamanekoubou1031",
     # "172.24.48.3:3306"
     # "tori-304112:asia-northeast1:tori-db"
-    "172.24.48.3",
+    "172.24.48.3:1433",
     # "127.0.0.1:3306"
     "test_database",
     # "unix_socket=/cloudsql/tori-304112:asia-northeast1:tori-db"
