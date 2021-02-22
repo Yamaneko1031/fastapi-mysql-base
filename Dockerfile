@@ -14,4 +14,4 @@ EXPOSE 8080
 
 COPY ./app /app
 # RUN python models.py
-CMD sh -c "uvicorn main:app --host 0.0.0.0 --port 8080"
+CMD sh -c "python models.py && uvicorn main:app --host 0.0.0.0 --port 8080"
