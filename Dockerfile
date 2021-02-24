@@ -12,4 +12,4 @@ RUN poetry install --no-root
 EXPOSE 8080
 
 COPY ./app /app
-CMD sh -c "uvicorn main:app --host 0.0.0.0 --port 8080"
+CMD sh -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8080"
