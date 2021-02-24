@@ -13,5 +13,11 @@ EXPOSE 8080
 # EXPOSE 3306
 
 COPY ./app /app
+COPY startup.sh /bin/startup.sh
+
+# RUN chmod 744 /bin/startup.sh
+ENTRYPOINT ["/bin/startup.sh"]
+# CMD ["/bin/startup.sh"]
+
 # RUN python models.py
 # CMD sh -c "python models.py && uvicorn main:app --host 0.0.0.0 --port 8080"
