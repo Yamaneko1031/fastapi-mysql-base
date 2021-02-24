@@ -14,7 +14,7 @@ EXPOSE 8080
 COPY ./app /app
 COPY startup.sh /bin/startup.sh
 
-RUN chmod 744 startup.sh
+RUN chmod 744 /bin/startup.sh
 ENTRYPOINT ["startup.sh"]
 
 # CMD sh -c "uvicorn main:app --host 0.0.0.0 --port 8080 && alembic upgrade head"
