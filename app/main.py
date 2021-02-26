@@ -1,9 +1,5 @@
 # main.py
-import string
 from typing import List
-import time
-
-from sqlalchemy.sql.sqltypes import Boolean
 
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
@@ -12,7 +8,6 @@ from starlette.middleware.cors import CORSMiddleware
 from database import SessionLocal
 import crud
 import schemas
-import models
 
 app = FastAPI()
 
@@ -34,19 +29,10 @@ app.add_middleware(
 def get_db():
     db = SessionLocal()
     try:
-        crud.create_time(db, "open")
-        yield db
-    finally:
-        crud.create_time(db, "close")
-        db.close()
-
-
-def get_db2():
-    db = SessionLocal()
-    try:
         yield db
     finally:
         db.close()
+
 
 @app.post("/users/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
@@ -70,16 +56,3 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
-
-
-@app.get("/times/", response_model=List[schemas.TimeTest])
-def read_times(db: Session = Depends(get_db2)):
-    times = crud.get_times(db)
-    return times
-
-
-@app.post("/test/")
-def create_user():
-    models.create_table()
-    return {"result":"success"}
-    

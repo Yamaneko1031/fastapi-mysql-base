@@ -23,15 +23,3 @@ def create_user(db: Session, user: schemas.UserCreate):
     db.commit()
     db.refresh(db_user)
     return db_user
-
-
-def create_time(db: Session, kind: str):
-    db_time = models.TimeStamp(kind=kind)
-    db.add(db_time)
-    db.commit()
-    db.refresh(db_time)
-    return db_time
-
-
-def get_times(db: Session):
-    return db.query(models.TimeStamp).all()

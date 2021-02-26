@@ -1,7 +1,5 @@
 # schemas.py
-from datetime import date, datetime, time, timedelta
 from pydantic import BaseModel
-from sqlalchemy.sql.sqltypes import Boolean
 
 
 # データの作成および読み取りで使用する共通の属性
@@ -18,16 +16,6 @@ class UserCreate(UserBase):
 # データ読み取り時に使用
 class User(UserBase):
     id: int
-
-    # ORMモードの使用を許可する
-    class Config:
-        orm_mode = True
-
-
-class TimeTest(BaseModel):
-    id: int
-    kind: str
-    created_at: datetime
 
     # ORMモードの使用を許可する
     class Config:
